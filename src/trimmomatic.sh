@@ -1,20 +1,16 @@
 #! /bin/bash
 ## Run trimmomatic
-fasta="/home/rstudio/disk/fasta"
-mkdir -p $fasta
-
 paired="/home/rstudio/disk/paired"
 mkdir -p $paired
 unpaired="/home/rstudio/disk/unpaired"
 mkdir -p $unpaired
-cd $fasta
-#definir les dossiers paired unpaired pour deposer les infos issues de la trimomomatic
+#definir les dossiers paired & unpaired pour deposer les infos issues de la trimomomatic
 SRR="SRR3308950
 SRR3308951
 SRR3308952
 SRR3308953
 "
-
+# definir les valeurs SRRs sur lesquels tourner
 for fn in $SRR;
 
 do
@@ -31,4 +27,11 @@ do
 	  LEADING:22 SLIDINGWINDOW:4:22 MINLEN:25
 
 done
-
+# threads: c'est le nombre de noyaux qui tournent pour executer la fonction
+# rediriger la fonction sur le bon directoire puis l'executer sur les bons fichiers et 
+# les envoyer sur les bons dossiers creés au préalable 
+#ILLUMINACLIP: palindromeClipThreshold: specifies how accurate the 
+#match between the two 'adapter ligated' reads must be for PE palindrome 
+#read alignment
+#LEADING:Specifies the minimum quality required to keep a base
+#SLIDINGWINDOW: specifies the average quality required 
