@@ -4,19 +4,39 @@ cd /home/rstudio/disk/
 mkdir -p star/index
 
 #Liste des SRR d'intérêt
-SRR="
-"
+SRR="SRR3308951
+SRR3308952
+SRR3308953
+SRR3308954
+SRR3308955
+SRR3308958
+SRR3308959
+SRR3308960
+SRR3308961
+SRR3308965
+SRR3308966
+SRR3308967
+SRR3308968
+SRR3308969
+SRR3308970
+SRR3308971
+SRR3308977
+SRR3308980
+SRR3308981
+SRR3308984
+SRR3308985"
+#SRR3308950"
 
 #Génération de l'index du génome humain annoté, avec 7 coeurs
-STAR --runThreadN 1 --runMode genomeGenerate \
-  --genomeDir star/index \
-  --genomeFastaFiles Hsap_genome.fa \
-  --sjdbGTFfile Hsap_annotation.gtf \
-  --sjdbOverhang 100 \
-  --genomeChrBinNbits 18
+#STAR --runThreadN 1 --runMode genomeGenerate \
+#  --genomeDir star/index \
+# --genomeFastaFiles Hsap_genome.fa \
+#  --sjdbGTFfile Hsap_annotation.gtf \
+#  --sjdbOverhang 100 \
+#  --genomeChrBinNbits 18
 
 
-paired=/home/rstudio/disk/data_trimmed/paired
+paired=/home/rstudio/disk/paired
 
 for srr in $SRR :
 do
@@ -26,8 +46,8 @@ mkdir -p star/$srr'_star'
 cd star/$srr'_star'
 #Quantification des reads
 STAR --runThreadN 7 --genomeDir /home/rstudio/disk/star/index \
-  --readFilesIn $paired/$srr'_trimmed_paired_1.fastq' \
-  $paired/$srr'_trimmed_paired_2.fastq'
+  --readFilesIn $paired/$srr'_paired_1.fastq' \
+  $paired/$srr'_paired_2.fastq'
   
 #Le fichier Aligned.out.sam est renvoyé par STAR, mais il est trop gros -> conversion en .bam, plus léger
 samtools view -bS -h Aligned.out.sam > $srr'.bam'
