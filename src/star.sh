@@ -46,8 +46,8 @@ mkdir -p star/$srr'_star'
 cd star/$srr'_star'
 #Quantification des reads
 STAR --runThreadN 7 --genomeDir /home/rstudio/disk/star/index \
-  --readFilesIn $paired/$srr'_paired_1.fastq' \
-  $paired/$srr'_paired_2.fastq'
+  --readFilesIn $paired/$srr'_fasta_paired_1.fastq' \
+  $paired/$srr'_fasta_paired_2.fastq'
   
 #Le fichier Aligned.out.sam est renvoyé par STAR, mais il est trop gros -> conversion en .bam, plus léger
 samtools view -bS -h Aligned.out.sam > $srr'.bam'
