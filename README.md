@@ -19,6 +19,7 @@ Une fois les fichiers générés pour chaque patient, on peut les rassembler dan
 
 trimomatic permet de nettoyer les fichiers vis-à-vis de séquences sur-representées qui sont dans un fichier fasta .fa
 ces sequences correspondent principalement aux adapteurs, primers, polyA voire des ARN ribosomiques
+il est important de savoir que trimmomatic ne peut lire que les fichiers dont le nom a été modifiéau au préalable, dans notre cas par get_fastqc.sh
 
 #fastqc_nettoyage.sh
 
