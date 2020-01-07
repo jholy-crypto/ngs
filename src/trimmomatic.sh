@@ -45,10 +45,10 @@ do
 
 done
 # threads: c'est le nombre de noyaux qui tournent pour executer la fonction
-# rediriger la fonction sur le bon directoire puis l'executer sur les bons fichiers et 
-# les envoyer sur les bons dossiers creés au préalable 
-#ILLUMINACLIP: palindromeClipThreshold: specifies how accurate the 
-#match between the two 'adapter ligated' reads must be for PE palindrome 
-#read alignment
-#LEADING:Specifies the minimum quality required to keep a base
-#SLIDINGWINDOW: specifies the average quality required 
+# Permet la redirection de la fonction sur le bon chemin puis l'execution sur les bons fichiers et 
+# finalment permet de les envoyer sur les bons dossiers creés au préalable 
+# ILLUMINACLIP: palindromeClipThreshold: definie la précision de matching entre deux "adapter ligated" reads 
+# pour un alignement de reads en palindrome PE
+
+#LEADING:specifie la qualité minimale necessaire pour garder une base
+#SLIDINGWINDOW: specifie la qualité moyenne necessaire
