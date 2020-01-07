@@ -9,3 +9,4 @@ wget -O Hsap_cDNA.fa 'http://ensembl.org/biomart/martservice?query=<Query  virtu
 		<Attribute name = "external_gene_name" />
 	</Dataset>
 </Query>'
+# permet de telecharger le transcriptome humain 
