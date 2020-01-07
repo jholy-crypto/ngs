@@ -36,9 +36,9 @@ do
 fastq-dump $srr -O /home/rstudio/disk/sra_data --split-files -I
 
 
-# rename sequence names
+# permet de renommer les sequences
 # example awk -F"\." '{ if (NR%2 == 1) { $3="" ; print $1 "_" $2 "/1"} else {print $0} }'
-# separe les lignes en differents morceaux  -F (definition de champs) NR%2 (si numero de la ligne est impaire @ et +) afficher $1
+# les lignes sont separées en differents morceaux  -F (definit un champs) NR%2 (si numero de la ligne est impaire @ et +) afficher $1
 # titre/sequence/titre/qualité 
 awk -F"\." '{ if (NR%2 == 1) { $3="" ; print $1 "_" $2 "/1"} else {print $0} }' $srr'_1.fastq'> temp1.fastq 
 awk -F"\." '{ if (NR%2 == 1) { $3="" ; print $1 "_" $2 "/2"} else {print $0} }' $srr'_2.fastq'> temp2.fastq 
