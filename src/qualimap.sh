@@ -28,6 +28,7 @@ SRR3308977
 SRR3308980
 SRR3308981"
 
+
 qualimapped=/home/rstudio/disk/qualimapped
 cd /home/rstudio/disk/star
 for srr in $SRR
