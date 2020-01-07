@@ -25,6 +25,9 @@ il est important de savoir que trimmomatic ne peut lire que les fichiers dont le
 
 permet de vérifier que les sequences définies dans le fichier fasta ont été enlevées en générant de nouveaux fichiers fastqc
 
+#get_cDNA
+permet d'importer le transcriptome humain et son annotation depuis Ensbl 
+
 #salmon.sh
 
 salmon permet tout d'abord de créer un index du transcriptome humain sur lequel il fera une analyse comparative des séquences de nos patients et puis une quantification de reads par transcrit.
@@ -34,7 +37,7 @@ cette qualité on suppose que c'est du à de regions intergéniques provenant de
 
 #star.sh
 
-Star permet de générer un Index sur le génome entier et donc prend en compte toutes les séquences qui n'ont pas été reconnues par Salmon.
+Star permet de générer un Index sur le génome entier (fournit par Corenthin/ sinon générer un index avec un code similaire au get_cDNA.sh) et donc prend en compte toutes les séquences qui n'ont pas été reconnues par Salmon.
 Ensuite star fait une quantification de reads par transcrit.
 
 #qualimap.sh
