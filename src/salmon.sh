@@ -2,6 +2,7 @@
 
 cd /home/rstudio/disk
 mkdir -p salmon
+#création du dossier salmon sur disk
 
 #Liste des SRR d'intérêt
 SRR="SRR3308950
@@ -28,21 +29,20 @@ SRR3308984
 SRR3308985"
 ## Run salmon
 
-#Création de l'index à partir de la base de données, taille des k-mères : 25 (on a pas mal de reads assez petits)
+# Permet de créer un index à partir du transcriptome téléchargé avec des k-mères, qui réprésentent de reads, ont une taille de 25
 salmon index -t Hsap_cDNA.fa -i salmon/humain_index -k 25
 
 for srr in $SRR :
 do
-
-#Quantification par salmon, -i: index, -l: type de librairie détecté automatiquement, -1 et -2: input
-#-o: output, --validateMappings:
-#--threads: nombre de coeurs dédiés
-#--gcBias: option qui corrige s'il y a des changements dans le taux de GC
 salmon quant -i salmon/humain_index -l A -1 paired/$srr'_fasta_paired_1.fastq' \
   -2 paired/$srr'_fasta_paired_2.fastq' \
   --validateMappings \
   -o salmon/$srr'_quant' \
   --threads 7 --gcBias
+#Permet de quantifier en utilisant l'index généré où: -i: index, -l: type de librairie détecté automatiquement, -1 et -2: input
+#-o: output, --validateMappings:
+#--threads: nombre de coeurs dédiés à l'execution du programme
+#--gcBias: option qui permet de corriger les changements dans le taux de GC
 echo $srr
 done
-#gcbias: traitement de gc (à chercher)
+
