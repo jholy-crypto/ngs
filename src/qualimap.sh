@@ -6,8 +6,12 @@ cd /home/rstudio/disk/
 mkdir -p qualimapped 
 
 #Liste des SRR d'intérêt
-SRR="
-SRR3308954
+SRR="SRR3308950
+SRR3308951
+SRR3308952
+SRR3308953
+SRR3308984
+SRR3308985
 SRR3308955
 SRR3308958
 SRR3308959
@@ -23,16 +27,6 @@ SRR3308971
 SRR3308977
 SRR3308980
 SRR3308981"
-
-
-#SRR3308951"
-#SRR3308952
-
-#SRR3308950"
-
-#SRR3308953"
-#SRR3308984"
-#SRR3308985"
 
 qualimapped=/home/rstudio/disk/qualimapped
 cd /home/rstudio/disk/star
