@@ -22,19 +22,28 @@ files <- file.path(dir,"salmon", paste0(condition$sample,"_salmon_quant"), "quan
 names(files) <- condition$sample
 #on nomme le chemin file par le nom de l'échnatillon qu'on récupére dans la colone sample du tableau condition
 
-patient <- c("SRR3308956",
-"SRR3308957",
-"SRR3308963",
-"SRR3308964",
-"SRR3308972",
-"SRR3308973",
-"SRR3308974",
-"SRR3308975",
-"SRR3308976",
-"SRR3308978",
-"SRR3308979",
-"SRR3308982",
-"SRR3308983")
+patient <- c("SRR3308950,
+SRR3308951,
+SRR3308952,
+SRR3308953,
+SRR3308954,
+SRR3308955,
+SRR3308958,
+SRR3308959,
+SRR3308960,
+SRR3308961,
+SRR3308965,
+SRR3308966,
+SRR3308967,
+SRR3308968,
+SRR3308969,
+SRR3308970,
+SRR3308971,
+SRR3308977,
+SRR3308980,
+SRR3308981,
+SRR3308984,
+SRR3308985")
 
 #on définit "patient" comme l'ensemble des patients cités.
 
