@@ -44,9 +44,10 @@ Ensuite star fait une quantification de reads par transcrit.
 
 pour vérifier que star permet d'obtenir un meilleur overlapping sur nos séquences on execute qualimap.sh 
 
-#tximportR
+#DEseq_day2.R
+
 une fois la quantification mise en place, on fait l'analyse differentielle d'expression grâce au programme DEseq.
 tout d'abord on crée une matrice contenant les patients et les caracteristiques d'intêret (time,réponse,sexe,etc)
 puis on execute DEseq sur les données de la matrice
-ensuite on fait le shrinkage pour enlever l'effet de petites valeurs de foldchange sur les gènes differentiellement et significativement exprimés
-finalement on génére les MAplots associés qui nous permettront de determiner la quantité de gènes differentiellement surexprimés ou downregulés ainsi que d'identifier leur nature et trouver leur lien avec la question biologique.
+ensuite on fait le shrinkage pour enlever l'effet de petites valeurs de foldchange sur les gènes differentiellement et significativement exprimés.
+Finalement on génére les MAplots associés qui nous permettront de determiner la quantité de gènes differentiellement surexprimés ou downregulés ainsi que d'identifier leur nature et trouver leur lien avec la question biologique.
