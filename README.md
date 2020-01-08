@@ -46,7 +46,7 @@ pour vérifier que star permet d'obtenir un meilleur overlapping sur nos séquen
 
 #DEseq_day2.R
 
-une fois la quantification mise en place, on fait l'analyse differentielle d'expression grâce au programme DEseq.
+Une fois la quantification mise en place, on fait l'analyse differentielle d'expression grâce au programme DEseq.
 tout d'abord on crée une matrice contenant les patients et les caracteristiques d'intêret (time,réponse,sexe,etc)
 puis on execute DEseq sur les données de la matrice
 ensuite on fait le shrinkage pour enlever l'effet de petites valeurs de foldchange sur les gènes differentiellement et significativement exprimés.
