@@ -77,6 +77,7 @@ dds$time <- relevel(dds$time, ref = "before") # Ici ce à quoi on va se comparer
 dds <- DESeq(dds)
 resultsNames(dds)
 resLFC <- lfcShrink(dds, coef="time_after_vs_before", type="apeglm")
+# permet de faire le shrinkage, c'est-à-dire d'enlever les foldchanges issus de petites valeurs d'expression
 resLFC_resp <- resLFC
 
 # 744 DE genes 5% FDR
@@ -89,7 +90,7 @@ maplot <- ggplot(as.data.frame(resLFC_resp),aes(x=log10(baseMean),y=log2FoldChan
 maplot
 resLFC_resp$padj[is.na(resLFC_resp$padj)] <- 1
 resLFC_resp[resLFC_resp$padj<0.05,]
-
+#permet d'afficher le MAplot
 
 # DE analysis : comparison 2 in the paper / with "us" data
 dds <- DESeqDataSetFromMatrix(countData = round(us[,condition$type=="non_responding"],0),
